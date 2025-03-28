@@ -1,11 +1,19 @@
 import { StyleSheet, View, StatusBar } from "react-native";
 import CategoriesScreen from "./screens/CategoriesScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigation } from "@react-navigation/natine-stack";
+
+const Stack = createNativeStackNavigation();
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style={"light"} />
-      <CategoriesScreen />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="MeelsCategories" content={CategoriesScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
