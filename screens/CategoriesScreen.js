@@ -5,7 +5,9 @@ import CategortGridTitle from "../components/CategortGridTitle";
 export default function CategoriesScreen({ navigation }) {
   const renderCategoryItem = (itemData) => {
     const pressHandler = () => {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", {
+        categoryId: itemData.item.id,
+      });
     };
 
     return (
